@@ -16,7 +16,7 @@ export default class Home extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.label}>
+        <Text style={[styles.label, {marginTop: 40}]}>
           Enter your name :
         </Text>
         <TextInput
@@ -47,8 +47,7 @@ export default class Home extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 100,
-    backgroundColor: '#7768B8'
+    backgroundColor: '#7768B8',
   },
   label: {
     fontSize: 20,

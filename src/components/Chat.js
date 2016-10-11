@@ -1,23 +1,23 @@
 import React from 'react';
-import {
-  View,
-  Text,
-} from 'react-native';
+
+import { GiftedChat } from 'react-native-gifted-chat';
 
 export default class Chat extends React.Component {
+  state = {
+    messages: [],
+  };
+  onSend() {
+
+  }
   render() {
     return (
-      <View
-        style={{
-          flex: 1,
-          justifyContent: 'center',
-          alignItems: 'center',
+      <GiftedChat
+        messages={this.state.messages}
+        onSend={this.onSend}
+        user={{
+          _id: 1,
         }}
-      >
-        <Text>
-          Chat
-        </Text>
-      </View>
+      />
     );
   }
 }
