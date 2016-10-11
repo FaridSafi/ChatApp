@@ -1,32 +1,63 @@
 import React from 'react';
 import {
-  View,
+  StyleSheet,
   Text,
+  TextInput,
   TouchableOpacity,
+  View,
 } from 'react-native';
 
 import { Actions } from 'react-native-router-flux';
 
 export default class Home extends React.Component {
+  state = {
+    name: '',
+  };
   render() {
     return (
-      <View
-        style={{
-          flex: 1,
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
-      >
+      <View style={styles.container}>
+        <Text style={styles.label}>
+          Enter your name :
+        </Text>
+        <TextInput
+          placeholder='Developer'
+          style={styles.textInput}
+          onChangeText={(text) => {
+            this.setState({
+              name: text,
+            });
+          }}
+        />
         <TouchableOpacity
           onPress={() => {
-            Actions.chat();
+            Actions.chat({
+              name: this.state.name,
+            });
           }}
         >
-          <Text>
-            Home
+          <Text style={styles.label}>
+            Next
           </Text>
         </TouchableOpacity>
       </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    paddingTop: 100,
+    backgroundColor: '#7768B8'
+  },
+  label: {
+    fontSize: 20,
+    marginLeft: 15,
+    color: '#fff',
+  },
+  textInput: {
+    height: 40,
+    marginLeft: 15,
+    color: '#fff',
+  },
+});
