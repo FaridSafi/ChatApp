@@ -20,6 +20,12 @@ class Backend {
       }
     });
   }
+  setUid(value) {
+    this.uid = value;
+  }
+  getUid() {
+    return this.uid;
+  }
   loadMessages(callback) {
     this.messagesRef = firebase.database().ref('messages');
     this.messagesRef.off();
@@ -50,12 +56,6 @@ class Backend {
     if (this.messagesRef) {
       this.messagesRef.off();
     }
-  }
-  setUid(value) {
-    this.uid = value;
-  }
-  getUid() {
-    return this.uid;
   }
 }
 

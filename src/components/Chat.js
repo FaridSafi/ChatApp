@@ -35,3 +35,11 @@ export default class Chat extends React.Component {
     );
   }
 }
+
+Chat.defaultProps = {
+  name: '',
+};
+
+Chat.propTypes = {
+  name: React.PropTypes.string,
+};
