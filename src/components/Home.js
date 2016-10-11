@@ -47,16 +47,13 @@ export default class Home extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#7768B8',
   },
   label: {
     fontSize: 20,
     marginLeft: 15,
-    color: '#fff',
   },
   textInput: {
     height: 40,
     marginLeft: 15,
-    color: '#fff',
   },
 });
