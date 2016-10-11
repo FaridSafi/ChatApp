@@ -7,6 +7,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "firebase": "^3.4.1",
     "react": "15.3.2",
     "react-native": "0.35.0",
     "react-native-gifted-chat": "0.0.10",
