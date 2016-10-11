@@ -19,6 +19,9 @@ export default class Chat extends React.Component {
       });
     });
   }
+  componentWillUnmount() {
+    Backend.closeChat();
+  }
   render() {
     return (
       <GiftedChat
