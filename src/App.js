@@ -1,23 +1,18 @@
 import React from 'react';
-import {
-  View,
-  Text,
-} from 'react-native';
+
+import { Router, Scene } from 'react-native-router-flux';
+import Home from './components/Home';
+import Chat from './components/Chat';
 
 export default class App extends React.Component {
   render() {
     return (
-      <View
-        style={{
-          flex: 1,
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
-      >
-        <Text>
-          Hello World
-        </Text>
-      </View>
+      <Router>
+        <Scene key='root'>
+          <Scene key='home' title='Home' component={Home}/>
+          <Scene key='chat' title='Chat' component={Chat}/>
+        </Scene>
+      </Router>
     );
   }
 }
