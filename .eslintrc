@@ -20,7 +20,7 @@
     "react/prop-types": "warn",
     "react/react-in-jsx-scope": "error",
     "react/require-render-return": "error",
-    "react-native/no-unused-styles": "error",
+    "react-native/no-unused-styles": "off",
   },
   "plugins": [
     "react",
