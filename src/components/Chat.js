@@ -10,7 +10,7 @@ export default class Chat extends React.Component {
   onSend(message) {
     Backend.sendMessage(message);
   }
-  componentWillMount() {
+  componentDidMount() {
     Backend.loadMessages((message) => {
       this.setState((previousState) => {
         return {
