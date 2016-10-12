@@ -27,6 +27,7 @@ export default class Home extends React.Component {
               name: text,
             });
           }}
+          value={this.state.name}
         />
         <TouchableOpacity
           onPress={() => {
