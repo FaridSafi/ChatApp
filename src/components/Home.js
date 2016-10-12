@@ -20,7 +20,7 @@ export default class Home extends React.Component {
           Enter your name :
         </Text>
         <TextInput
-          placeholder='Developer'
+          placeholder='John Smith'
           style={styles.textInput}
           onChangeText={(text) => {
             this.setState({

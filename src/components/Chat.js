@@ -7,8 +7,22 @@ export default class Chat extends React.Component {
   state = {
     messages: [],
   };
-  onSend(message) {
-    Backend.sendMessage(message);
+  componentWillMount() {
+
+  }
+  render() {
+    return (
+      <GiftedChat
+        messages={this.state.messages}
+        onSend={(message) => {
+          Backend.sendMessage(message);
+        }}
+        user={{
+          _id: Backend.getUid(),
+          name: this.props.name,
+        }}
+      />
+    );
   }
   componentDidMount() {
     Backend.loadMessages((message) => {
@@ -22,22 +36,10 @@ export default class Chat extends React.Component {
   componentWillUnmount() {
     Backend.closeChat();
   }
-  render() {
-    return (
-      <GiftedChat
-        messages={this.state.messages}
-        onSend={this.onSend}
-        user={{
-          _id: Backend.getUid(),
-          name: this.props.name,
-        }}
-      />
-    );
-  }
 }
 
 Chat.defaultProps = {
-  name: 'Developer',
+  name: 'John Smith',
 };
 
 Chat.propTypes = {

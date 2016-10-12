@@ -3,6 +3,7 @@ import firebase from 'firebase';
 class Backend {
   uid = '';
   messagesRef = null;
+  // initialize Firebase Backend
   constructor() {
     firebase.initializeApp({
       apiKey: 'AIzaSyAiuvZgc9iLMezprc5zYLBw9PsrgRkXjrE',
@@ -26,6 +27,7 @@ class Backend {
   getUid() {
     return this.uid;
   }
+  // retrieve the messages from the Backend
   loadMessages(callback) {
     this.messagesRef = firebase.database().ref('messages');
     this.messagesRef.off();
@@ -43,6 +45,7 @@ class Backend {
     };
     this.messagesRef.limitToLast(20).on('child_added', onReceive);
   }
+  // send the message to the Backend
   sendMessage(message) {
     for (let i = 0; i < message.length; i++) {
       this.messagesRef.push({
@@ -52,6 +55,7 @@ class Backend {
       });
     }
   }
+  // close the connection to the Backend
   closeChat() {
     if (this.messagesRef) {
       this.messagesRef.off();
